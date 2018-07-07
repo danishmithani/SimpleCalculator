@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding:0;
+  font-family: 'lato', sans-serif;
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translateX(-50%)translateY(-50%);
+}
+
+.btn {
+  width: 60px;
+  height: 50px;
+  font-size: 20px;
+  margin:2px;
+  cursor: pointer;
+}
+
+.textview {
+  font-size: 20px;
+  height: 40px;
+  padding: 2px 6px;
+  margin:5px 0 5px 5px;
+  border-radius: 2px;
+  border-top: none;
+  border-left: none;
+}
+
+.equal {
+  height: 110px;
+}
+.zero {
+  width: 128px;
+}
+.bg {
+  background: linear-gradient(to bottom right, red, silver, blue);
+  height:100%;
+}

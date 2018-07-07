@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>JS CALCULATOR</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="mystyle.css">
+        <script src="main.js"></script>
+	</head>
+	<body>
+		<div class="bg" ></div>
+		<form name="form">
+			<input class="textview" name="textview">
+			<table>
+				<tr>
+					<td><input type="button" class="btn" onclick="clean()" value="C"></td>
+					<td><input type="button" class="btn" onclick="back()" value="<"></td>
+					<td><input type="button" class="btn" onclick="insert('/')" value="/"></td>
+					<td><input type="button" class="btn" onclick="insert('*')" value="X"></td>
+				</tr>
+				<tr>
+					<td><input type="button" class="btn" onclick="insert(7)" value="7"></td>
+					<td><input type="button" class="btn" onclick="insert(8)" value="8"></td>
+					<td><input type="button" class="btn" onclick="insert(9)" value="9"></td>
+					<td><input type="button" class="btn" onclick="insert('-')" value="-"></td>
+				</tr>
+				<tr>
+					<td><input type="button" class="btn" onclick="insert(4)" value="4"></td>
+					<td><input type="button" class="btn" onclick="insert(5)" value="5"></td>
+					<td><input type="button" class="btn" onclick="insert(6)" value="6"></td>
+					<td><input type="button" class="btn" onclick="insert('+')" value="+"></td>
+				</tr>
+				<tr>
+					<td><input type="button" class="btn" onclick="insert(1)" value="1"></td>
+					<td><input type="button" class="btn" onclick="insert(2)" value="2"></td>
+					<td><input type="button" class="btn" onclick="insert(3)" value="3"></td>
+					<td rowspan=2><input type="button" class="btn equal" onclick="equal()" value="="></td>
+				</tr>
+				<tr>
+					<td colspan=2><input type="button" class="btn zero" onclick="insert(0)" value="0"></td>
+					<td><input type="button" class="btn" onclick="insert('.')" value="."></td>
+				</tr>
+			</table>
+
+		</form>
+		<script>
+			function insert(num) {
+				document.form.textview.value = document.form.textview.value + num;
+			}
+			function equal() {
+				var exp = document.form.textview.value;
+				if(exp){
+					document.form.textview.value = eval(exp);
+				}
+			}
+			function clean() {
+				document.form.textview.value = "";
+			}
+			function back() {
+				var str = document.form.textview.value;
+				document.form.textview.value = str.substring(0, str.length-1);
+			}
+		</script>
+	</body>
+</html>
